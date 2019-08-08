@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>Customer Support</title>
+<style>
+	input:focus
+	{
+		background-color: LightYellow;
+	}
+	textarea:focus
+	{
+		background-color: LightYellow;
+	}
+	a:link
+	{
+		color: blue;
+	}
+	a:visited
+	{
+		color: darkblue;
+	}
+	a:hover
+	{
+		color: Red;
+	}
+	img.front
+	{
+		opacity: 0.8;
+		filter: alpha(opacity=80%);
+		float: right;
+		margin-right:100px;
+	}
+
+	.nav ul.a
+	{	
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+	.nav li.a
+	{
+		float: left;
+	}
+	.nav li.a a
+	{
+		display: block;
+		color: white;
+		padding: 18px 25px;
+		text-align: center;
+
+	}
+	.nav a:hover:not(.active){
+		background-color: #111;
+	}
+
+	.nav .active{
+		background-color: #4CAF50;
+	}
+	table{
+		padding-left: 100px;
+	}
+	table td{
+		padding-bottom: 5px;
+	}
+</style>	
+</head>
+<body bgcolor=LightGrey> <font color=black>
+	<div class="nav">
+	<ul type="none" class="a">
+	<li class="a"><a href="CompManufacturer.html">Home</a></li>
+  	<li class="a"><a href="pclist.html">Our Products</a></li>
+  	<li class="a"><a href="Offers.html">Offers</a></li>
+  	<li class="a"><a href="purchase.html">Purchase</a></li>
+  	<li class="a"><a class="active" href="customer.html">Complaints</a></li>
+  	<li class="a"><a href="Apply.html">Apply</a></li>
+ 	<li class="a"><a href="terms.html">Terms and Conditions</a></li>
+ 	<li class="a"><a href="login.html">Login</a></li>
+ 	</div>
+</ul>
+<hr color=black size=15>
+<h1 align= center >Customer Service</h1>
+<hr width=60% color=black width=10>
+<marquee size=6> Fill a sample form with the details given below or send your query @ <a href="https://mail.google.com/mail"> <font color=blue>chipinc@gmail.com</a></font>
+</marquee>
+<p align=center>
+<img class="Front" src="https://smallbizcontent.files.wordpress.com/2013/08/customer-service.jpg" width=300 height=300 > 
+</p>
+<form>
+<table>
+	<font color=black  size=5>
+<tr>
+	<th>
+		<u>First Name</u>:- 
+	</th>
+	<td>	
+		<input type="Name" placeholder="First Name" name="First Name" maxlength="20" required>
+	</td>
+	<td>
+		<u>Last Name</u>:-
+	</td>
+	<td>
+		<input type="Name" placeholder="Last Name" name="Last Name" maxlength="20" required>
+	</td>
+</tr>
+<tr>
+	<th>
+		<u>Name of device</u>:-
+	</th>
+	<td>
+	<select name="Device"> 
+		<option value="D-3532">D-3532</option>
+		<option value="Swagster">Swagster</option>
+		<option value="7YRDH"> 7YRDH </option>
+		<option value="Chip-49">Chip-49</option>
+ 	</select>
+ 	</td>
+ </tr>
+ <tr>
+ 	<th>
+ 	<br>
+		<u>Problems Encountered</u>:-
+	</th>
+	<td>
+		<textarea name="Problems" rows="10" cols="40" placeholder="Enter Your Problems Here (min 50 charecters, max 300)" maxlength="300" minlength="50" value="Complaint" required></textarea>
+	</td>
+</tr>
+<tr>
+	<th>
+		<u>Date of Purchase (Before September)</u>:- 
+	</th>
+	<td>
+		<input type="Date" name="Date" max="2019-09-01" min="2000-01-01" required> <!-- This will limit the minimum and maximum date input -->
+	</td>
+</tr>
+<tr>
+	<th>
+		<u>Reciept Number:</u> 
+	</th>
+	<td>
+		<input type="Number" name="Reciept" placeholder="1-999" min="1" max="999" required> 
+	</td>
+</tr>
+<tr>
+	<td></td><td></td>
+	<td>
+		<input type="Submit" align="center" name="Submit" value="Submit"> 
+	</td>
+	<td>
+		<input type="reset" name="Reset" >
+	</td>
+</tr>
+</font>
+</table>
+</form>
+<hr color=black width=80%>
+<!-- <p> Click <a href="CompManufacturer.html"> Here</a> to return back to the homepage</p> -->
+</body>
+</html>
