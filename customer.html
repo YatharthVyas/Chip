@@ -4,11 +4,49 @@
 <style>
 	input:focus
 	{
-		background-color: LightYellow;
+		background-color: #e6f2ff;
+		border-radius: 7px;
 	}
 	textarea:focus
 	{
-		background-color: LightYellow;
+		background-color: #e6f2ff;
+	}
+	select:focus
+	{
+		background-color: #e6f2ff;
+		border-radius: 7px;
+	}
+	textarea,input[type=Name],select,input[type=Date],input[type=Number]
+	{
+		width=100%;
+		border: 1px solid #ccc;
+		overflow: auto;
+		resize: vertical;
+		border-radius: 7px;
+		padding: 7px;
+	}
+	input[type=submit]
+	{
+		padding: 8px;
+		min-width: 150px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover
+	{
+		color: White;
+		background-color: #4CAF50;
+	}
+	input[type=reset]
+	{
+		padding: 8px;
+		min-width: 150px;
+		cursor: pointer;
+	}
+	input[type=reset]:hover
+	{
+		color: White;
+		background-color: Red;
 	}
 	a:link
 	{
@@ -90,13 +128,13 @@
 	<font color=black  size=5>
 <tr>
 	<th>
-		<u>First Name</u>:- 
+		First Name:- 
 	</th>
 	<td>	
 		<input type="Name" placeholder="First Name" name="First Name" maxlength="20" required>
 	</td>
-	<td>
-		<u>Last Name</u>:-
+	<th>
+		Last Name:-
 	</td>
 	<td>
 		<input type="Name" placeholder="Last Name" name="Last Name" maxlength="20" required>
@@ -104,7 +142,7 @@
 </tr>
 <tr>
 	<th>
-		<u>Name of device</u>:-
+		Name of device:-
 	</th>
 	<td>
 	<select name="Device"> 
@@ -118,7 +156,7 @@
  <tr>
  	<th>
  	<br>
-		<u>Problems Encountered</u>:-
+		Problems Encountered:-
 	</th>
 	<td>
 		<textarea name="Problems" rows="10" cols="40" placeholder="Enter Your Problems Here (min 50 charecters, max 300)" maxlength="300" minlength="50" value="Complaint" required></textarea>
@@ -126,7 +164,7 @@
 </tr>
 <tr>
 	<th>
-		<u>Date of Purchase (Before September)</u>:- 
+		Date of Purchase (Before September):- 
 	</th>
 	<td>
 		<input type="Date" name="Date" max="2019-09-01" min="2000-01-01" required> <!-- This will limit the minimum and maximum date input -->
@@ -134,23 +172,19 @@
 </tr>
 <tr>
 	<th>
-		<u>Reciept Number:</u> 
+		Reciept Number: 
 	</th>
 	<td>
 		<input type="Number" name="Reciept" placeholder="1-999" min="1" max="999" required> 
 	</td>
 </tr>
-<tr>
-	<td></td><td></td>
-	<td>
-		<input type="Submit" align="center" name="Submit" value="Submit"> 
-	</td>
-	<td>
-		<input type="reset" name="Reset" >
-	</td>
-</tr>
-</font>
 </table>
+<div align="center">
+	<input type="Submit" align="center" name="Submit" value="Submit"> 
+	<input type="reset" name="Reset" >
+</div>
+</font>
+
 </form>
 <hr color=black width=80%>
 <!-- <p> Click <a href="CompManufacturer.html"> Here</a> to return back to the homepage</p> -->
