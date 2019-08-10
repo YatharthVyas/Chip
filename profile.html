@@ -36,6 +36,7 @@
    		color: white;
    		padding: 18px 25px;
     	text-align: center;
+    	text-decoration: none;
 
  	}
 	.nav a:hover:not(.active){
@@ -45,14 +46,6 @@
  	.nav .active
  	{
     	background-color: #4CAF50;
-  	}
-  	#profile
-  	{
-  		display: none;
-  	}
-  	#login:hover #profile
-  	{
-  		display: block;
   	}
   	.dropdown, .dropdown a
   	{
@@ -81,11 +74,12 @@
   	<li ><a href="Apply.html">Apply</a></li>
  	<li ><a href="terms.html">Terms and Conditions</a></li>
  	<div class="dropdown">
- 		<li > User </li>
+ 	<li><a href="_blank" class="dropbtn">User Menu</a>
  		<div class="dropdown-content">
- 			<li  ><a class="active" href="login.html">Login</a></li>
- 			<li ><br><a href="profile.html">Profile</a></li>
+ 			<a href="login.html">Login</a>
+ 			<a href="profile.html">Profile</a>
  		</div>
+ 	</li>
  	</div>
  </ul>
  <br>
