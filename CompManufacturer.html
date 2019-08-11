@@ -5,16 +5,6 @@
 Chip Computer Manufacturer
 </title>
 <style>
-	/*a:link
-	{
-		color: blue;
-	}
-	a:visited
-	{
-		color: darkblue;
-	}
-	a:hover
-	*/	
 	div.main
 	{
 		padding: 20px;
@@ -22,6 +12,7 @@ Chip Computer Manufacturer
 	h1
 	{
 		font-family: "Courier New", Courier, monospace;
+		text-shadow: 2px 2px 4px gray;
 	}
 	p
 	{
@@ -30,8 +21,8 @@ Chip Computer Manufacturer
 	}
 	p.intro::first-letter
 	{
-		font-size: xx-large;
-		color: DarkBlue;
+		font-size: 60;
+		color: #001a66;
 	}
 
 	/* Add a black background color to the top navigation bar */
@@ -42,7 +33,6 @@ Chip Computer Manufacturer
 		top: 0;
 		margin: 0;
 		padding: 0;
-		overflow: hidden;
 		background-color: #333;
 	}
 
@@ -53,9 +43,9 @@ Chip Computer Manufacturer
 	}
 
 	/* Style the links inside the navigation bar */
-	.nav li a
+	.nav li a,.dropbtn
 	{
-		display: block;
+		display: inline-block;
 		color: white;
 		padding: 18px 25px;
 		text-align: center;
@@ -72,8 +62,37 @@ Chip Computer Manufacturer
 	.nav .active{
 		background-color: #4CAF50;
 	}
+ 	.nav a:hover:not(.active),.dropdown:hover .dropbtn
+ 	{
+    	background-color: #111;
+  	}
+  	li.dropdown 
+  	{
+   	 	display: inline-block;
+  	}
+  	.dropdown-content
+  	{
+    	display: none;
+    	position: absolute;
+    	z-index: 1;
+  	} 
+  	.dropdown-content a
+  	{
+    	display: block;
+    	color: black;
+    	padding: 18px 25px;
+   	 	min-width: 72px;
+  	}
+  	.dropdown-content a:hover:not(.active) 
+  	{
+    	background-color: #111;
+  	}
+  	.dropdown:hover .dropdown-content 
+  	{
+    	display: block;
+    	background-color: #333;
+ 	}
 </style>
-
 </head>
 <body bgcolor=#d9d9d9>
 <div class="nav">
@@ -85,7 +104,12 @@ Chip Computer Manufacturer
   	<li><a href="customer.html">Complaints</a></li>
   	<li><a href="Apply.html">Apply</a></li>
  	<li><a href="terms.html">Terms and Conditions</a></li>
- 	<li><a href="login.html">Login</a></li>
+ 	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
+    <div class="dropdown-content">
+      <a href="login.html">Login</a><br>
+      <a href="profile.html">Profile</a>
+    </div>
+  </li>
 </ul>
 <br>
 <br>

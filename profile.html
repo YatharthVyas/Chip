@@ -11,6 +11,7 @@
 		transition: width 2s;
 		background: red;
 		background-image: linear-gradient(to right,red,blue);
+		text-shadow: 2px 2px 4px black;
 	}
 	div.heading:hover
 	{
@@ -23,14 +24,13 @@
   		top: 0;
     	margin: 0;
     	padding: 0;
-   	 	overflow: hidden;
     	background-color: #333;
   	}
   	.nav li
  	{
    		float: left;
  	}
- 	.nav li a
+ 	.nav li a, .dropbtn
  	{
     	display: inline-block;
    		color: white;
@@ -39,7 +39,12 @@
     	text-decoration: none;
 
  	}
-	.nav a:hover:not(.active){
+ 	a.dropbtn
+ 	{
+ 		--main-width:auto;
+ 	}
+	.nav a:hover:not(.active),.dropdown:hover .dropbtn
+	{
     	background-color: #111;
 	}
 
@@ -47,51 +52,78 @@
  	{
     	background-color: #4CAF50;
   	}
-  	.dropdown, .dropdown a
+  	li.dropdown 
   	{
-  		display: inline-block;
-  		position: relative;
-  	}
-  	.dropdown-content
+		  display: inline-block;
+	}
+	.dropdown-content
   	{
   		display: none;
   		position: absolute;
+  		z-index: 1;
   	} 
-  	.dropdown:hover .dropdown-content
+  	.dropdown-content a
   	{
   		display: block;
+  		color: black;
+  		padding: 18px 25px;
+  		min-width: 72px;
   	}
+  	.dropdown-content a:hover:not(.active) 
+  	{
+  		background-color: #111;
+  	}
+  	.dropdown:hover .dropdown-content 
+  	{
+ 	 	display: block;
+ 	 	background-color: #333;
+	}
+	div.tooltip
+	{
+		display: inline-block;
+		position: relative;
+	}
+	div.tooltip .tiptext
+	{	
+		visibility: hidden;
+		z-index: 1;
+	}
+	div.tooltip:hover .tiptext
+	{
+		visibility: visible;
+	}
 </style>
 </head>
 <body>
 <div class="nav">
 <ul type="none" >
-	<li ><a href="CompManufacturer.html">Home</a></li>
-  	<li ><a href="pclist.html">Our Products</a></li>
-  	<li ><a href="Offers.html">Offers</a></li>
-  	<li ><a href="purchase.html">Purchase</a></li>
-  	<li ><a href="customer.html">Complaints</a></li>
-  	<li ><a href="Apply.html">Apply</a></li>
- 	<li ><a href="terms.html">Terms and Conditions</a></li>
- 	<div class="dropdown">
- 	<li><a href="_blank" class="dropbtn">User Menu</a>
+	<li><a href="CompManufacturer.html">Home</a></li>
+  	<li><a href="pclist.html">Our Products</a></li>
+  	<li><a href="Offers.html">Offers</a></li>
+  	<li><a href="purchase.html">Purchase</a></li>
+  	<li><a href="customer.html">Complaints</a></li>
+  	<li><a href="Apply.html">Apply</a></li>
+ 	<li><a href="terms.html">Terms and Conditions</a></li>
+ 	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
  		<div class="dropdown-content">
- 			<a href="login.html">Login</a>
- 			<a href="profile.html">Profile</a>
+ 			<a href="login.html">Login</a><br>
+ 			<a href="profile.html" class="active">Profile</a>
  		</div>
  	</li>
- 	</div>
  </ul>
  <br>
  <br>
  <br>
  </div>
  <hr color=black size=15>
-
 <div class=heading>
 	<h2 align="center">Welcome to Your Profile</h2>
 </div>
-
-
+<div class="tooltip">
+	Hover over me
+	<div class="tiptext">
+		Message
+	</div>
+</div>
 </body>
 </html>

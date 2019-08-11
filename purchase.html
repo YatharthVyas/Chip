@@ -11,16 +11,15 @@
     top: 0;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: #333;
   }
   .nav li
   {
     float: left;
   }
-  .nav li a
+  .nav li a,.dropbtn
   {
-    display: block;
+    display: inline-block;
     color: white;
     padding: 18px 25px;
     text-align: center;
@@ -36,15 +35,89 @@
   {
     background-color: #4CAF50;
   }
+  li.dropdown 
+    {
+      display: inline-block;
+    }
+    .dropdown-content
+    {
+      display: none;
+      position: absolute;
+      z-index: 1;
+    } 
+    .dropdown-content a
+    {
+      display: block;
+      color: black;
+      padding: 18px 25px;
+      min-width: 72px;
+    }
+    .dropdown-content a:hover:not(.active) 
+    {
+      background-color: #111;
+    }
+    .dropdown:hover .dropdown-content 
+    {
+      display: block;
+      background-color: #333;
+  }
   div.grad
   {
     background-color: red;
-    background-image: linear-gradient(to right,red,blue);
+    background-image: linear-gradient(to left,lightgray,red);
   }
-
+  div.tooltip
+  {
+    display: inline-block;
+    position: relative;
+    box-shadow: 2px 4px 4px;
+    font-size: large;
+    padding: 5px;
+    margin-left: 30px;  
+    margin-top: 30px; 
+    height: 35px;
+    width: 200px;
+    transition: height 0.1s;
+    text-align: center;
+    background-color:#ffb3b3;
+    background-image: linear-gradient(lightgray,#ffb3b3);
+  }
+  div.tooltip .tiptext
+  { 
+    visibility: hidden;
+    z-index: 1;
+  }
+  div.tooltip:hover
+  {
+    height: 170px;
+  }
+  div.tooltip:hover .tiptext
+  {
+    visibility: visible;
+  }
+  h2.top
+  {
+    margin-left: 100px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+  button.buy
+  {
+    padding: 8px;
+    cursor: pointer;  
+    border-radius: 7px;
+    width: 100px;
+    transition: width 2s;
+  }
+  button.buy:hover
+  {
+    color: white;
+    background-color: #4CAF50;
+    width: 130px;
+    border: ridge black;
+  }
 </style>
 </head>
-<body>
+<body bgcolor="lightgray">
 <div class="nav">
 <ul type="none">
   <li><a href="CompManufacturer.html">Home</a></li>
@@ -54,7 +127,12 @@
   <li><a href="customer.html">Complaints</a></li>
   <li><a href="Apply.html">Apply</a></li>
   <li><a href="terms.html">Terms and Conditions</a></li>
-  <li><a href="login.html">Login</a></li>
+  <li class="dropdown"><a href="" class="dropbtn">User Menu</a>
+    <div class="dropdown-content">
+      <a href="login.html">Login</a><br>
+      <a href="profile.html">Profile</a>
+    </div>
+  </li>
 </ul>
 </div>
 <br>
@@ -63,9 +141,65 @@
 <hr color=black size=15>
 <div class=grad>
 <br>
-<br>
+<h2 class="top"><em> Hover Over the Name to Know It's Price and Specs!</h2></em>
 <br>
 </div>
+<table>
+  <tr>
+    <td>
+<div class="tooltip">
+ <font face="Snap ITC" size="5"><b> D-3532 </b> </font>
+  <div class="tiptext">
+    Rs 40,499 <br>
+    22.1 inch Screen <br>
+    4gb Ram <br>
+    Full HD Display <br>
+    Windows 7 <br>
+    <button class="buy">Buy Now</button>
+  </div>
+</div>
+</td>
+<td>
+<div class="tooltip">
+ <font face="Snap ITC" size="5"><b> Swagster </b> </font>
+  <div class="tiptext">
+    Rs 47,899<br>
+    23.2 inch Screen<br>
+    4gb Ram <br>
+    Full HD Display <br>
+    Windows 8<br>
+    <button class="buy">Buy Now</button>
+  </div>
+</div>
+</td>
+<td>
+<div class="tooltip">
+ <font face="Snap ITC" size="5"> <b> 7YRDH </b> </font>
+  <div class="tiptext">
+    Rs. 50,299 <br>
+    26 inch Screen <br>
+    6gb RAM <br>
+    TouchScreen <br>
+    windows 8<br>
+    <button class="buy">Buy Now</button>
+  </div>
+</div>
+</td>
+<td>
+  <div class="tooltip">
+ <font face="Snap ITC" size="5"> <b> Chip-49 </b> </font>
+  <div class="tiptext">
+    Rs 65,999<br>
+    32 inch Screen<br>
+    8gb RAM<br>
+    TouchScreen<br>
+    Windows 10<br>
+    <button class="buy">Buy Now</button>
+  </div>
+</div>
+</td>
+</tr>
+</table>
 <hr align=center width=60% color=black>
 </body>
 </html>

@@ -5,7 +5,6 @@
 	input:focus
 	{
 		background-color: #e6f2ff;
-		border-radius: 7px;
 	}
 	textarea:focus
 	{
@@ -79,16 +78,15 @@
 		top: 0;
 		margin: 0;
 		padding: 0;
-		overflow: hidden;
 		background-color: #333;
 	}
 	.nav li
 	{
 		float: left;
 	}
-	.nav li a
+	.nav li a,.dropbtn
 	{
-		display: block;
+		display: inline-block;
 		color: white;
 		padding: 18px 25px;
 		text-align: center;
@@ -102,6 +100,32 @@
 	.nav .active{
 		background-color: #4CAF50;
 	}
+	li.dropdown 
+  	{
+   	 	display: inline-block;
+  	}
+  	.dropdown-content
+  	{
+    	display: none;
+    	position: absolute;
+    	z-index: 1;
+  	} 
+  	.dropdown-content a
+  	{
+    	display: block;
+    	color: black;
+    	padding: 18px 25px;
+   	 	min-width: 72px;
+  	}
+  	.dropdown-content a:hover:not(.active) 
+  	{
+    	background-color: #111;
+  	}
+  	.dropdown:hover .dropdown-content 
+  	{
+    	display: block;
+    	background-color: #333;
+ 	}
 	table{
 		padding-left: 100px;
 	}
@@ -120,7 +144,12 @@
   	<li><a class="active" href="customer.html">Complaints</a></li>
   	<li><a href="Apply.html">Apply</a></li>
  	<li><a href="terms.html">Terms and Conditions</a></li>
- 	<li><a href="login.html">Login</a></li>
+ 	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
+    <div class="dropdown-content">
+      <a href="login.html">Login</a><br>
+      <a href="profile.html">Profile</a>
+    </div>
+  </li>
  	</div>
 </ul>
 <br>

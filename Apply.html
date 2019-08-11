@@ -9,16 +9,15 @@
 		top: 0;
 		margin: 0;
 		padding: 0;
-		overflow: hidden;
 		background-color: #333;
 	}
 	.nav li
 	{
 		float: left;
 	}
-	.nav li a
+	.nav li a,.dropbtn
 	{
-		display: block;
+		display: inline-block;
 		color: white;
 		padding: 18px 25px;
 		text-align: center;
@@ -32,6 +31,32 @@
 	.nav .active{
 		background-color: #4CAF50;
 	}
+	li.dropdown 
+  	{
+   	 	display: inline-block;
+  	}
+  	.dropdown-content
+  	{
+    	display: none;
+    	position: absolute;
+    	z-index: 1;
+  	} 
+  	.dropdown-content a
+  	{
+    	display: block;
+    	color: black;
+    	padding: 18px 25px;
+   	 	min-width: 72px;
+  	}
+  	.dropdown-content a:hover:not(.active) 
+  	{
+    	background-color: #111;
+  	}
+  	.dropdown:hover .dropdown-content 
+  	{
+    	display: block;
+    	background-color: #333;
+ 	}
 	img.logo
 	{
 		float: right;
@@ -42,6 +67,11 @@
 	div.content
 	{
 		margin-left: 40px;
+	}
+	p.intro::first-letter
+	{
+		font-size: 60;
+		color: black;
 	}
 </style>
 </head>
@@ -55,7 +85,12 @@
   	<li><a href="customer.html">Complaints</a></li>
   	<li><a class="active" href="Apply.html">Apply</a></li>
  	<li><a href="terms.html">Terms and Conditions</a></li>
- 	<li><a href="login.html">Login</a></li>
+ 	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
+    <div class="dropdown-content">
+      <a href="login.html">Login</a><br>
+      <a href="profile.html">Profile</a>
+    </div>
+  </li>
 </ul>
 <br>
 <br>
@@ -66,7 +101,9 @@
 <b><h1 align=center><u> Apply To Join Chip Computer Manufactures Pvt. Lmt. </u></h1>
 <hr color=black width=60%>
 <div class="content">
-If you wish to join the best computer manufacturing company, email us at www.chipcomp@gmail.com<br>
+	<p class="intro">
+	If you wish to join the best computer manufacturing company, email us at www.chipcomp@gmail.com<br>
+	</p>
 <br>
 <img class="logo" src="http://www.clker.com/cliparts/z/U/7/V/d/Y/apply-online-md.png">
 Please Attach the following documents in your resume :-
