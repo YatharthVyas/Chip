@@ -1,6 +1,7 @@
 <html>
 <head>
 <title> L:ist of Computers</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="navbar.css">
 <style>
 	#heading
@@ -18,19 +19,24 @@
 	{
 		background: #dae2f8;
 		background: linear-gradient(to right, #dae2f8, #d6a4a4);
+		padding:0;
+	}
+	#widthcontrol
+	{
+		max-width: fit-content;
 	}
 </style>
 </head>
 <body bgcolor=LightGray>
-<div class="nav">
+<nav class="nav">
 <ul type="none">
 	<li><a href="CompManufacturer.html">Home</a></li>
-  	<li><a class="active" href="pclist.html">Our Products</a></li>
+  	<li><a class="active" href="pclist.html">Products</a></li>
   	<li><a href="Offers.html">Offers</a></li>
   	<li><a href="purchase.html">Purchase</a></li>
   	<li><a href="customer.html">Complaints</a></li>
   	<li><a href="Apply.html">Apply</a></li>
- 	<li><a href="terms.html">Terms and Conditions</a></li>
+ 	<li><a href="terms.html">Terms</a></li>
  	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
     <div class="dropdown-content">
       <a href="login.html">Login</a><br>
@@ -41,7 +47,7 @@
 <br>
 <br>
 <br>
-</div>
+</nav>
 <hr color=black size=15>
 <big><u><b><h1 align=center> List of Computer Devices</h1></b></u></big>
 <hr width= 60% height-10 color=black>
@@ -49,7 +55,7 @@
 <br>
 <img src="Images/pcxD.png" height=240 width=400><br>
 <br>
-<table cellspacing=0 cellpadding=5 border=3>
+<table cellspacing=0 cellpadding=5 border=3 class="table table-hover table-responsive" id="widthcontrol">
 <tr id="row1">
 <th colspan=8 id="heading"> List Of Computer Devices </th>
 </tr>
@@ -66,24 +72,28 @@
 <td>D-3532</td>
 <td>Rs. 40,499</td>
 <td>22.1' screen,</td>
-<td rowspan=2>4gb RAM</td> 
-<td rowspan=2> No </td> 
+<td>4gb RAM</td> 
+<td> No </td> 
 <td> Windows 7</td>
-<td rowspan=2> OK </td>
+<td> OK </td>
 <td>6.7/10</td>
 </tr>
 <tr>
 <td>Swagster</td>
 <td>Rs 47,899</td>
 <td>23.2' Screen</td>
-<td rowspan=2>Windows 8</td>
+<td>4gb RAM</td> 
+<td> No </td>
+<td>Windows 8</td>
+<td> OK </td>
 <td>6.8/10</td>
 </tr>
 <td>7YRDH</td>
 <td>Rs. 50,299 </td>
 <td> 26' Screen </td>
 <td>6gb RAM</td>
-<td rowspan=2>Yes</td>
+<td>Yes</td>
+<td>Windows 8</td>
 <td> Good </td>
 <td>7.3/10</td>
 </tr>
@@ -95,14 +105,17 @@ Chip-49
 <td> Rs 65,999</td>
 <td>32' Screen </td>
 <td> 8gb RAM</td>
+<td>Yes</td>
 <td> Windows 10</td>
 <td> Brand New </td>
 <td>9.9/10</td>
 </tr>
 <tr>
 <td colspan=8> <marquee> More Products Will Be Released Soon!!!</marquee></td>
+</tr>
 </table>
 <br>
 <hr align=center width=60% color=black>
+<footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>
 </body>
 </html>

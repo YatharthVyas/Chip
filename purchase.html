@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Purchase</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="navbar.css">
 	<style>
   div.grad
@@ -9,7 +10,7 @@
     background-color: red;
     background-image: linear-gradient(to left,lightgray,red);
   }
-  div.tooltip
+  div.mytooltip
   {
     display: inline-block;
     position: relative;
@@ -18,30 +19,30 @@
     padding: 5px;
     margin-left: 30px;  
     margin-top: 30px; 
-    height: 35px;
+    height: 55px;
     width: 200px;
     transition: height 0.1s;
     text-align: center;
     background-color:#ffb3b3;
     background-image: linear-gradient(lightgray,#ffb3b3);
   }
-  div.tooltip .tiptext
+  div.mytooltip .mytooltext
   { 
     visibility: hidden;
     z-index: 1;
   }
-  div.tooltip:hover
+  div.mytooltip:hover
   {
-    height: 170px;
+    height: 230px;
   }
-  div.tooltip:hover .tiptext
+  div.mytooltip:hover .mytooltext
   {
     visibility: visible;
   }
   h2.top
   {
     margin-left: 100px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: Elephant;
   }
   button.buy
   {
@@ -58,18 +59,30 @@
     width: 130px;
     border: ridge black;
   }
+  @media screen and (max-width: 575px){
+    div.mytooltip .mytooltext
+    {
+      display: block;
+      visibility: visible;
+    }
+    div.mytooltip
+    {
+        height: 230px;
+        width: 80%;
+    }
+  }
 </style>
 </head>
 <body bgcolor="lightgray">
 <div class="nav">
 <ul type="none">
   <li><a href="CompManufacturer.html">Home</a></li>
-  <li><a href="pclist.html">Our Products</a></li>
+  <li><a href="pclist.html">Products</a></li>
   <li><a href="Offers.html">Offers</a></li>
   <li><a href="purchase.html" class="active">Purchase</a></li>
   <li><a href="customer.html">Complaints</a></li>
   <li><a href="Apply.html">Apply</a></li>
-  <li><a href="terms.html">Terms and Conditions</a></li>
+  <li><a href="terms.html">Terms</a></li>
   <li class="dropdown"><a href="" class="dropbtn">User Menu</a>
     <div class="dropdown-content">
       <a href="login.html">Login</a><br>
@@ -84,15 +97,20 @@
 <hr color=black size=15>
 <div class=grad>
 <br>
-<h2 class="top"><em> Hover Over the Name to Know It's Price and Specs!</h2></em>
+<h2 class="top"> Online Shop </h2>
 <br>
 </div>
-<table>
-  <tr>
-    <td>
-<div class="tooltip">
+<hr align=center width=60% color=black>
+<br>
+<br>
+<h3 align="center">Hover Over the Name to Know It's Price and Specs!</h3>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="mytooltip">
  <font face="Snap ITC" size="5"><b> D-3532 </b> </font>
-  <div class="tiptext">
+  <div class="mytooltext">
     Rs 40,499 <br>
     22.1 inch Screen <br>
     4gb Ram <br>
@@ -101,11 +119,11 @@
     <button class="buy">Buy Now</button>
   </div>
 </div>
-</td>
-<td>
-<div class="tooltip">
+    </div>
+    <div class="col-sm">
+      <div class="mytooltip">
  <font face="Snap ITC" size="5"><b> Swagster </b> </font>
-  <div class="tiptext">
+  <div class="mytooltext">
     Rs 47,899<br>
     23.2 inch Screen<br>
     4gb Ram <br>
@@ -114,11 +132,11 @@
     <button class="buy">Buy Now</button>
   </div>
 </div>
-</td>
-<td>
-<div class="tooltip">
+    </div>
+    <div class="col-sm">
+      <div class="mytooltip">
  <font face="Snap ITC" size="5"> <b> 7YRDH </b> </font>
-  <div class="tiptext">
+  <div class="mytooltext">
     Rs. 50,299 <br>
     26 inch Screen <br>
     6gb RAM <br>
@@ -127,11 +145,11 @@
     <button class="buy">Buy Now</button>
   </div>
 </div>
-</td>
-<td>
-  <div class="tooltip">
+    </div>
+    <div class="col-sm">
+       <div class="mytooltip">
  <font face="Snap ITC" size="5"> <b> Chip-49 </b> </font>
-  <div class="tiptext">
+  <div class="mytooltext">
     Rs 65,999<br>
     32 inch Screen<br>
     8gb RAM<br>
@@ -140,9 +158,12 @@
     <button class="buy">Buy Now</button>
   </div>
 </div>
-</td>
-</tr>
-</table>
-<hr align=center width=60% color=black>
+</div>
+</div>
+</div>
+<br>
+<br>
+<hr align=center width=60% color=black> 
+<footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>
 </body>
 </html>
