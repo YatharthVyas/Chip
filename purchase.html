@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Purchase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="navbar.css">
 	<style>
@@ -59,6 +60,10 @@
     width: 130px;
     border: ridge black;
   }
+  #mobile
+    {
+      visibility: hidden;
+    }
   @media screen and (max-width: 575px){
     div.mytooltip .mytooltext
     {
@@ -70,10 +75,18 @@
         height: 230px;
         width: 80%;
     }
+    #desktop
+    {
+      visibility: hidden;
+    }
+    #mobile
+    {
+      visibility: visible;
+    }
   }
 </style>
 </head>
-<body bgcolor="lightgray">
+<body>
 <div class="nav">
 <ul type="none">
   <li><a href="CompManufacturer.html">Home</a></li>
@@ -101,10 +114,8 @@
 <br>
 </div>
 <hr align=center width=60% color=black>
-<br>
-<br>
-<h3 align="center">Hover Over the Name to Know It's Price and Specs!</h3>
-<br>
+<h3 align="center" id="mobile">These are our products:-</h3>
+<h3 align="center" id="desktop">Hover Over the Name to Know It's Price and Specs!</h3>
 <div class="container">
   <div class="row">
     <div class="col-sm">
