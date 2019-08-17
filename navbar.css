@@ -1,75 +1,75 @@
-  /* Add a black background color to the top navigation bar */
-  .nav ul
-  { 
-    position: absolute;
-    width: 100%;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-  }
-  /*To make the list elements horizontal*/  
-  .nav li
-  {
-    float: left;
-  }
-  /* Style the links and Dropdown button inside the navigation bar */
-  .nav li a, .dropbtn
-  {
-    display: inline-block;
-    color: white;
-    padding: 18px 25px;
-    text-align: center;
-    text-decoration: none; /*To remove the hyperlink underline*/
-  }
-  /*To show the hover effect over link other than the active*/
-  .nav a:hover:not(.active){
-    background-color: #111;
-  }
-  /* Style the "active" element to highlight the current page */
-  .nav .active
-  {
-    background-color: #4CAF50;
-  }
-  .nav a:hover:not(.active),.dropdown:hover .dropbtn
-  {
-    background-color: #111;
-  }
-  li.dropdown 
-  {
-    display: inline-block;
-  }
-  .dropdown-content
-  {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    padding: 0;
-  } 
-  .dropdown-content a
-  {
-    display: block;
-    color: black;
-    padding: 18px 25px;
-    min-width: 127px;
-  }
-  .dropdown-content a:hover:not(.active) 
-  {
-    background-color: #111;
-  }
-  .dropdown:hover .dropdown-content 
-  {
-    display: block;
-    background-color: #333;
-  }
- footer
-  {
-    text-align: center;
-    background-color: #333;
-    color: white;
-  }
-  body
-  {
-    margin: 10px 0 0 0;
-    background-color: #e6e6e6;
-  }
+/* Add a black background color to the top navigation bar */
+.nav ul
+{ 
+  position: absolute;
+  width: 100%;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+/*To make the list elements horizontal*/  
+.nav li
+{
+  float: left;
+}
+/* Style the links and Dropdown button inside the navigation bar */
+.nav li a, .dropbtn
+{
+  display: inline-block;
+  color: white;
+  padding: 18px 25px;
+  text-align: center;
+  text-decoration: none; /*To remove the hyperlink underline*/
+}
+/*To show the hover effect over link other than the active*/
+.nav a:hover:not(.active){
+  background-color: #111;
+}
+/* Style the "active" element to highlight the current page */
+.nav .active
+{
+  background-color: #4CAF50;
+}
+.nav a:hover:not(.active),.dropdown:hover .dropbtn
+{
+  background-color: #111;
+}
+li.dropdown 
+{
+  display: inline-block;
+}
+.dropdown-content
+{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding: 0;
+} 
+.dropdown-content a
+{
+  display: block;
+  color: black;
+  padding: 18px 25px;
+  min-width: 127px;
+}
+.dropdown-content a:hover:not(.active) 
+{
+  background-color: #111;
+}
+.dropdown:hover .dropdown-content 
+{
+  display: block;
+  background-color: #333;
+}
+footer
+{
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+body
+{
+  margin: 10px 0 0 0;
+  background-color: #e6e6e6;
+}

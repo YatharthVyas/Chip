@@ -1,93 +1,95 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Customer Support</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="navbar.css">
-<style>
-	input:focus
-	{
-		background-color: #e6f2ff;
-	}
-	textarea:focus
-	{
-		background-color: #e6f2ff;
-	}
-	select:focus
-	{
-		background-color: #e6f2ff;
-		border-radius: 7px;
-	}
-	textarea,input[type=Name],select,input[type=Date],input[type=Number]
-	{
-		width=100%;
-		border: 1px solid #ccc;
-		overflow: auto;
-		resize: vertical;
-		border-radius: 7px;
-		padding: 7px;
-	}
-	select,option
-	{
-		padding: 7px;
-	}
-	input[type=submit]
-	{
-		padding: 8px;
-		min-width: 150px;
-		cursor: pointer;
-	}
-
-	input[type=submit]:hover
-	{
-		color: White;
-		background-color: #4CAF50;
-	}
-	input[type=reset]
-	{
-		padding: 8px;
-		min-width: 150px;
-		cursor: pointer;
-	}
-	input[type=reset]:hover
-	{
-		color: White;
-		background-color: Red;
-	}
-	img.front
-	{
-		opacity: 0.8;
-		filter: alpha(opacity=80%);
-		float: right;
-		margin-right:100px;
-	}
-	table{
-		padding-left: 100px;
-	}
-	table td{
-		padding-bottom: 5px;
-	}
-</style>	
+	<title>Customer Support</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="navbar.css">
+	<style>
+		input:focus
+		{
+			background-color: #e6f2ff;
+		}
+		textarea:focus
+		{
+			background-color: #e6f2ff;
+		}
+		select:focus
+		{
+			background-color: #e6f2ff;
+			border-radius: 7px;
+		}
+		textarea,input[type=Name],select,input[type=Date],input[type=Number]
+		{
+			width=100%;
+			border: 1px solid #ccc;
+			overflow: auto;
+			resize: vertical;
+			border-radius: 7px;
+			padding: 7px;
+		}
+		select,option
+		{
+			padding: 7px;
+		}
+		input[type=submit]
+		{
+			padding: 8px;
+			min-width: 150px;
+			cursor: pointer;
+		}
+		input[type=submit]:hover
+		{
+			color: White;
+			background-color: #4CAF50;
+		}
+		input[type=reset]
+		{
+			padding: 8px;
+			min-width: 150px;
+			cursor: pointer;
+		}
+		input[type=reset]:hover
+		{
+			color: White;
+			background-color: Red;
+		}
+		img.front
+		{
+			opacity: 0.8;
+			filter: alpha(opacity=80%);
+			float: right;
+			margin-right:100px;
+		}
+		table
+		{
+			padding-left: 100px;
+		}
+		table td
+		{
+			padding-bottom: 5px;
+		}
+	</style>	
 </head>
 <body> <font color=black>
-	<div class="nav">
-	<ul type="none" >
-	<li><a href="CompManufacturer.html">Home</a></li>
-  	<li><a href="pclist.html">Products</a></li>
-  	<li><a href="Offers.html">Offers</a></li>
-  	<li><a href="purchase.html">Purchase</a></li>
-  	<li><a class="active" href="customer.html">Complaints</a></li>
-  	<li><a href="Apply.html">Apply</a></li>
- 	<li><a href="terms.html">Terms</a></li>
- 	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
-    <div class="dropdown-content">
-      <a href="login.html">Login</a><br>
-      <a href="profile.html">Profile</a>
-    </div>
-  </li>
- 	</div>
-</ul>
+<div class="nav">
+  <ul type="none">
+    <li><a href="CompManufacturer.html">Home</a></li>
+      <li><a href="pclist.html">Products</a></li>
+      <li><a href="Offers.html">Offers</a></li>
+      <li><a href="purchase.html">Purchase</a></li>
+      <li><a class="active" href="customer.html">Complaints</a></li>
+      <li><a href="Apply.html">Apply</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li class="dropdown"><a href="" class="dropbtn">User Menu</a>
+        <div class="dropdown-content">
+            <a href="login.html">Login</a><br>
+            <a href="profile.html">Profile</a>
+        </div>
+      </li>
+  </ul>
+</div>
 <br>
 <br>
 <br>
@@ -100,66 +102,49 @@
 <img align="center" src="https://smallbizcontent.files.wordpress.com/2013/08/customer-service.jpg" width=300 height=300 > 
 </p>
 <form>
-<table class="table-responsive">
-	<font color=black  size=5>
-<tr>
-	<th>
-		First Name:- 
-	</th>
-	<td>	
-		<input type="Name" placeholder="First Name" name="First Name" maxlength="20" required>
-	</td>
-	<th>
-		Last Name:-
-	</td>
-	<td>
-		<input type="Name" placeholder="Last Name" name="Last Name" maxlength="20" required>
-	</td>
-</tr>
-<tr>
-	<th>
-		Name of device:-
-	</th>
-	<td>
-	<select name="Device"> 
-		<option value="D-3532">D-3532</option>
-		<option value="Swagster">Swagster</option>
-		<option value="7YRDH"> 7YRDH </option>
-		<option value="Chip-49">Chip-49</option>
- 	</select>
- 	</td>
- </tr>
- <tr>
- 	<th>
- 	<br>
-		Problems Encountered:-
-	</th>
-	<td>
-		<textarea name="Problems" rows="10" cols="40" placeholder="Enter Your Problems Here (min 50 charecters, max 300)" maxlength="300" minlength="50" value="Complaint" required></textarea>
-	</td>
-</tr>
-<tr>
-	<th>
-		Date of Purchase (Before September):- 
-	</th>
-	<td>
-		<input type="Date" name="Date" max="2019-09-01" min="2000-01-01" required> <!-- This will limit the minimum and maximum date input -->
-	</td>
-</tr>
-<tr>
-	<th>
-		Reciept Number: 
-	</th>
-	<td>
-		<input type="Number" name="Reciept" placeholder="1-999" min="1" max="999" required> 
-	</td>
-</tr>
-</table>
-<div align="center">
-	<input type="Submit" align="center" name="Submit" value="Submit"> 
-	<input type="reset" name="Reset" >
-</div>
-</font>
+	<table class="table-responsive">
+		<font color=black  size=5>
+		<tr>
+			<th>First Name:- </th>
+			<td><input type="Name" placeholder="First Name" name="First Name" maxlength="20" required></td>
+			<th>Last Name:-</td>
+			<td><input type="Name" placeholder="Last Name" name="Last Name" maxlength="20" required></td>
+		</tr>
+		<tr>
+			<th>Name of device:-</th>
+			<td>
+				<select name="Device"> 
+					<option value="D-3532">D-3532</option>
+					<option value="Swagster">Swagster</option>
+					<option value="7YRDH"> 7YRDH </option>
+					<option value="Chip-49">Chip-49</option>
+			 	</select>
+		 	</td>
+		 </tr>
+		 <tr>
+		 	<th>Problems Encountered:-</th>
+			<td>
+				<textarea name="Problems" rows="10" cols="40" placeholder="Enter Your Problems Here (min 50 charecters, max 300)" maxlength="300" minlength="50" value="Complaint" required></textarea>
+			</td>
+		</tr>
+		<tr>
+			<th>Date of Purchase (Before September):- </th>
+			<td>
+				<input type="Date" name="Date" max="2019-09-01" min="2000-01-01" required> <!-- This will limit the minimum and maximum date input -->
+			</td>
+		</tr>
+		<tr>
+			<th>Reciept Number: </th>
+			<td>
+				<input type="Number" name="Reciept" placeholder="1-999" min="1" max="999" required> 
+			</td>
+		</tr>
+	</table>
+	<div align="center">
+		<input type="Submit" align="center" name="Submit" value="Submit"> 
+		<input type="reset" name="Reset" >
+	</div>
+	</font>
 </form>
 <hr color=black width=80%>
 <footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>

@@ -1,50 +1,52 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title> L:ist of Computers</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="navbar.css">
-<style>
-	#heading
-	{
-		padding: 10px;
-		font-family: Lucida Bright;
-		font-size: large;
-	}
-	table
-	{
-		background: #dae2f8;
-		background: linear-gradient(to right, #dae2f8, #d6a4a4);
-		padding:0;
-	}
-	#widthcontrol
-	{
-		max-width: fit-content;
-	}
-</style>
+<title> List of Computers</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="navbar.css">
+	<style>
+		#heading
+		{
+			padding: 10px;
+			font-family: Lucida Bright;
+			font-size: large;
+			text-align: center;
+		}
+		table
+		{
+			background: #dae2f8;
+			background: linear-gradient(to right, #dae2f8, #d6a4a4);
+			padding:0;
+		}
+		#widthcontrol   /*Without this, the table makes an extra column to cover the page*/
+		{
+			max-width: fit-content;
+		}
+	</style>
 </head>
 <body>
-<nav class="nav">
-<ul type="none">
-	<li><a href="CompManufacturer.html">Home</a></li>
-  	<li><a class="active" href="pclist.html">Products</a></li>
-  	<li><a href="Offers.html">Offers</a></li>
-  	<li><a href="purchase.html">Purchase</a></li>
-  	<li><a href="customer.html">Complaints</a></li>
-  	<li><a href="Apply.html">Apply</a></li>
- 	<li><a href="terms.html">Terms</a></li>
- 	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
-    <div class="dropdown-content">
-      <a href="login.html">Login</a><br>
-      <a href="profile.html">Profile</a>
-    </div>
-  </li>
-</ul>
+<div class="nav">
+	<ul type="none">
+		<li><a href="CompManufacturer.html">Home</a></li>
+  		<li><a class="active" href="pclist.html">Products</a></li>
+  		<li><a href="Offers.html">Offers</a></li>
+  		<li><a href="purchase.html">Purchase</a></li> 
+  		<li><a href="customer.html">Complaints</a></li>
+  		<li><a href="Apply.html">Apply</a></li>
+ 		<li><a href="terms.html">Terms</a></li>
+ 		<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
+    		<div class="dropdown-content">
+      			<a href="login.html">Login</a><br>
+      			<a href="profile.html">Profile</a>
+   			</div>
+  		</li>
+	</ul>
+</div>
 <br>
 <br>
 <br>
-</nav>
 <hr color=black size=15>
 <big><u><b><h1 align=center> List of Computer Devices</h1></b></u></big>
 <hr width= 60% height-10 color=black>
@@ -52,64 +54,62 @@
 <br>
 <img src="Images/pcxD.png" height=240 width=400><br>
 <br>
-<table cellspacing=0 cellpadding=5 border=3 class="table table-hover table-responsive" id="widthcontrol">
-<tr id="row1">
-<th colspan=8 id="heading"> List Of Computer Devices </th>
-</tr>
-<tr>
-<th> Name Of Computer </th>
-<th> Cost </th>
-<th> Screen Size</th>
-<th> RAM </th>
-<th> TouchScreen </th>
-<th> Windows Version </th>
-<th> Condition </th>
-<th> Rating </th>
-</tr>
-<td>D-3532</td>
-<td>Rs. 40,499</td>
-<td>22.1' screen,</td>
-<td>4gb RAM</td> 
-<td> No </td> 
-<td> Windows 7</td>
-<td> OK </td>
-<td>6.7/10</td>
-</tr>
-<tr>
-<td>Swagster</td>
-<td>Rs 47,899</td>
-<td>23.2' Screen</td>
-<td>4gb RAM</td> 
-<td> No </td>
-<td>Windows 8</td>
-<td> OK </td>
-<td>6.8/10</td>
-</tr>
-<td>7YRDH</td>
-<td>Rs. 50,299 </td>
-<td> 26' Screen </td>
-<td>6gb RAM</td>
-<td>Yes</td>
-<td>Windows 8</td>
-<td> Good </td>
-<td>7.3/10</td>
-</tr>
-<tr>
-<td> &starf;
-Chip-49
-&starf;
- </td>
-<td> Rs 65,999</td>
-<td>32' Screen </td>
-<td> 8gb RAM</td>
-<td>Yes</td>
-<td> Windows 10</td>
-<td> Brand New </td>
-<td>9.9/10</td>
-</tr>
-<tr>
-<td colspan=8> <marquee> More Products Will Be Released Soon!!!</marquee></td>
-</tr>
+<table cellspacing=0 cellpadding=5 border=3 align="center" class="table table-hover table-responsive" id="widthcontrol">
+	<tr id="row1">
+		<th colspan=8 id="heading"> List Of Computer Devices </th>
+	</tr>
+	<tr>
+		<th> Name Of Computer </th>
+		<th> Cost </th>
+		<th> Screen Size</th>
+		<th> RAM </th>
+		<th> TouchScreen </th>
+		<th> Windows Version </th>
+		<th> Condition </th>
+		<th> Rating </th>
+	</tr>
+	<tr>
+		<td>D-3532</td>
+		<td>Rs. 40,499</td>
+		<td>22.1' screen,</td>
+		<td>4gb RAM</td> 
+		<td> No </td> 
+		<td> Windows 7</td>
+		<td> OK </td>
+		<td>6.7/10</td>
+	</tr>
+	<tr>
+		<td>Swagster</td>
+		<td>Rs 47,899</td>
+		<td>23.2' Screen</td>
+		<td>4gb RAM</td> 
+		<td> No </td>
+		<td>Windows 8</td>
+		<td> OK </td>
+		<td>6.8/10</td>
+	</tr>
+		<td>7YRDH</td>
+		<td>Rs. 50,299 </td>
+		<td> 26' Screen </td>
+		<td>6gb RAM</td>
+		<td>Yes</td>
+		<td>Windows 8</td>
+		<td> Good </td>
+		<td>7.3/10</td>
+	</tr>
+	<tr>
+		<td> &starf; <!-- starf creates a star charecter -->Chip-49 &starf;</td>
+		<td> Rs 65,999</td>
+		<td>32' Screen </td>
+		<td> 8gb RAM</td>
+		<td>Yes</td>
+		<td> Windows 10</td>
+		<td> Brand New </td>
+		<td>9.9/10</td>
+	</tr>
+	<tr>
+		<td colspan=8> <marquee> More Products Will Be Released Soon!!!</marquee></td>
+	</tr>
 </table>
 <br>
 <hr align=center width=60% color=black>

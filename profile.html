@@ -1,82 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Your Profile</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="navbar.css">
-<style>
-	div.heading
-	{
-		color: white;
-		padding: 15px;
-		width: 400px;
-		transition: width 2s;
-		background: red;
-		background-image: linear-gradient(to right,red,blue);
-		text-shadow: 2px 2px 4px black;
-		border-radius: 0px 30px 0px 0px;
-	}
-	img.a
-	{
-		border-radius: 50%;
-		border: 1px solid black;
-	}
-	#info
-	{
-		background: #3a1c71;
-		background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
-		height: 425px;
-		width: 555px;
-		color: white;
-		border-radius: 5%;
-		padding: 20px;
-		text-shadow: 2px 2px 4px black;
-		border:1px solid black;
-	}
-	label
-	{
-		text-shadow: 0px 1px 2px;
-		font-family:  Courier;	
-	}
-	@media screen and (max-width: 555px)
-	{
-		div.heading{
-			width: 100%;
-			border-radius: 0px;
+	<title>Your Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="navbar.css">
+	<style>
+		div.heading
+		{
+			color: white;
+			padding: 15px;
+			width: 400px;
+			transition: width 2s;
+			background: red;
+			background-image: linear-gradient(to right,red,blue);
+			text-shadow: 2px 2px 4px black;
+			border-radius: 0px 30px 0px 0px;
+		}
+		img.a
+		{
+			border-radius: 50%;
+			border: 1px solid black;
 		}
 		#info
 		{
-			border-radius: 0;
+			background: #3a1c71;
+			background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+			height: 425px;
+			width: 555px;
+			color: white;
+			border-radius: 5%;
+			padding: 20px;
+			text-shadow: 2px 2px 4px black;
+			border:1px solid black;
 		}
-		hr
+		label
 		{
-			min-width: 100%;
+			text-shadow: 0px 1px 2px;
+			font-family:  Courier;	
 		}
-	}
-	@media screen and (min-width: 555px)
-	{
-		div.heading:hover
+		@media screen and (max-width: 768px)
 		{
-			width: 70%;
+			div.heading{
+				width: 100%;
+				border-radius: 0px;
+			}
+			#info
+			{
+				border-radius: 0;
+			}
+			hr
+			{
+				min-width: 100%;
+			}
 		}
-		#info:hover , img.a:hover
+		@media screen and (min-width: 768px)
 		{
-			box-shadow: 10px 10px 8px 10px #888888;
+			div.heading:hover
+			{
+				width: 70%;
+			}
+			#info:hover , img.a:hover
+			{
+				box-shadow: 10px 10px 8px 10px #888888;
+			}
 		}
-	}
-	button
-	{
-		border-radius: 7px;
-		padding: 7px;
-	}
-	a
-	{
-		text-decoration: none;
-		color: white;
-	}
-</style>
+		button
+		{
+			border-radius: 7px;
+			padding: 7px;
+		}
+		a
+		{
+			text-decoration: none;
+			color: white;
+		}
+	</style>
 </head>
 <body>
 <div class="nav">
@@ -95,42 +94,41 @@
  		</div>
  	</li>
  </ul>
- <br>
- <br>
- <br>
- </div>
- <hr color=black size=15>
+<br><br><br>
+</div>
+<hr color=black size=15>
 <div class=heading>
 	<h2 align="center">Welcome to Your Profile</h2>
 </div>
 <hr width=70% color=black width=10 align="left">
 <br>
-<div class="container">
+<div class="container">	<!-- This will leave margins appropriately -->
 	<div class="row">
-	<div class="col-sm" id="info">
-		<label>Name: </label> 
-		Yatharth Vyas <br>
-		<label>Age: </label>
-		18 <br>
-		<label>Education: </label>
-		Computer Engineering in DJ Sanghvi <br>
-		<label>Experience: </label>
-		None <br>
-		<label>Average GPA: </label>
-		9.67<br>
-		<label>Email: </label>
-		yatharth2000.vyas@gmail.com<br>
-		<label> GitHub: </label>
-		<a href="https://github.com/YatharthVyas">https://github.com/YatharthVyas</a><br>
-		<button>Edit Info</button>
+		<div class="col-sm" id="info">
+			<label>Name: </label> 
+			Yatharth Vyas <br>
+			<label>Age: </label>
+			18 <br>
+			<label>Education: </label>
+			Computer Engineering in DJ Sanghvi <br>
+			<label>Experience: </label>
+			None <br>
+			<label>Average GPA: </label>
+			9.67<br>
+			<label>Email: </label>
+			yatharth2000.vyas@gmail.com<br>
+			<label> GitHub: </label>
+			<a href="https://github.com/YatharthVyas" title="Click on the link to visit my GitHub Page">https://github.com/YatharthVyas</a>
+			<br>
+			<button>Edit Info</button>
+		</div>
+		<div class="col-sm center-block" align="center">
+			<img class="a" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" height="250px">
+			<br>
+			<br>
+			<button class="btn-default">Change Image</button>
+		</div>
 	</div>
-	<div class="col-sm center-block" align="center">
-<img class="a" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" height="250px">
-<br>
-<br>
-<button class="btn-default">Change Image</button>
-</div>
-</div>
 </div>
 <br>
 <footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>
