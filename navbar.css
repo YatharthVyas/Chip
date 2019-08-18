@@ -21,16 +21,13 @@
   text-align: center;
   text-decoration: none; /*To remove the hyperlink underline*/
 }
-/*To show the hover effect over link other than the active*/
-.nav a:hover:not(.active){
-  background-color: #111;
-}
 /* Style the "active" element to highlight the current page */
 .nav .active
 {
   background-color: #4CAF50;
 }
-.nav a:hover:not(.active),.dropdown:hover .dropbtn
+/*To show the hover effect over link other than the active*/
+.nav a:hover:not(.active)
 {
   background-color: #111;
 }
@@ -52,10 +49,6 @@ li.dropdown
   padding: 18px 25px;
   min-width: 127px;
 }
-.dropdown-content a:hover:not(.active) 
-{
-  background-color: #111;
-}
 .dropdown:hover .dropdown-content 
 {
   display: block;
@@ -71,4 +64,10 @@ body
 {
   margin: 10px 0 0 0;
   background-color: #e6e6e6;
+}
+hr
+{
+  color: black; 
+  height: 1px; 
+  background-color:black;
 }
