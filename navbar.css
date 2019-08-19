@@ -47,12 +47,16 @@ li.dropdown
   display: block;
   color: black;
   padding: 18px 25px;
-  min-width: 127px;
+  min-width: 133px;
 }
 .dropdown:hover .dropdown-content 
 {
   display: block;
   background-color: #333;
+}
+.dropdown:hover .dropbtn
+{
+  background-color: #111;
 }
 footer
 {
@@ -67,7 +71,11 @@ body
 }
 hr
 {
-  color: black; 
-  height: 1px; 
-  background-color:black;
+  height: 5px;
+  color: black !important; 
+  background-color: black !important;
+}
+.glyphicon-chevron-down
+{
+  font-size: x-small;
 }

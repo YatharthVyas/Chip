@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Your Profile</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<meta charset="utf-8">
@@ -23,7 +24,7 @@
 			border-radius: 50%;
 			border: 1px solid black;
 		}
-		#info
+		#info:not(label)
 		{
 			background: #3a1c71;
 			background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
@@ -32,13 +33,15 @@
 			color: white;
 			border-radius: 5%;
 			padding: 20px;
-			text-shadow: 2px 2px 4px black;
+			text-shadow: 0px 0px 2px black;
+			font-size: large;
 			border:1px solid black;
-		}
-		label
-		{
-			text-shadow: 0px 1px 2px;
+			text-decoration-color: darkgrey;
 			font-family:  Courier;	
+		}
+		#info button
+		{
+			font-family: Times;	
 		}
 		@media screen and (max-width: 768px)
 		{
@@ -65,6 +68,10 @@
 			{
 				box-shadow: 10px 10px 8px 10px #888888;
 			}
+			#profile-image
+			{
+				float: right;
+			}
 		}
 		h2
 		{
@@ -82,18 +89,21 @@
 			color: white;
 		}
 	</style>
+	<script type="text/javascript">
+		
+	</script>
 </head>
 <body>
 <div class="nav">
 <ul type="none" >
-	<li><a href="CompManufacturer.html">Home</a></li>
+	<li><a href="CompManufacturer.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   	<li><a href="pclist.html">Products</a></li>
   	<li><a href="Offers.html">Offers</a></li>
   	<li><a href="purchase.html">Purchase</a></li>
   	<li><a href="customer.html">Complaints</a></li>
   	<li><a href="Apply.html">Apply</a></li>
  	<li><a href="terms.html">Terms</a></li>
- 	<li class="dropdown"><a href="" class="dropbtn">User Menu</a>
+ 	<li class="dropdown"><a href="" class="dropbtn">User Menu <span class="glyphicon glyphicon-chevron-down"></span></a>
  		<div class="dropdown-content">
  			<a href="login.html">Login</a><br>
  			<a href="profile.html" class="active">Profile</a>
@@ -110,32 +120,34 @@
 <br>
 <div class="container">	<!-- This will leave margins appropriately -->
 	<div class="row">
-		<div class="col-sm" id="info">
-			<label>Name: </label> 
-			Yatharth Vyas <br>
-			<label>Age: </label>
-			18 <br>
-			<label>Education: </label>
-			Computer Engineering in DJ Sanghvi <br>
-			<label>Experience: </label>
-			None <br>
-			<label>Average GPA: </label>
-			9.67<br>
-			<label>Email: </label>
-			yatharth2000.vyas@gmail.com<br>
-			<label> GitHub: </label>
-			<a href="https://github.com/YatharthVyas" title="Click on the link to visit my GitHub Page">https://github.com/YatharthVyas</a>
-			<br>
-			<button>Edit Info</button>
-		</div>
-		<div class="col-sm center-block" align="center">
+		<div class="col-md-6 center-block" align="center" id="profile-image">
 			<img class="a" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" height="250px" title="Click the button below to Change this image">
 			<br>
 			<br>
-			<button class="btn-default">Change Image</button>
+			<button class="btn-default" title="This button will work after we implement javascript">Change Image</button>
+		</div>
+		<div class="col-md-6" id="info">
+			Name: 
+			<label id="Name">Yatharth Vyas</label>  <br>
+			Age: 
+			<label id="Age">18</label> <br>
+			Education: 
+			<label id="College">Computer Engineering in DJ Sanghvi</label> <br>
+			Experience: 
+			<label id="Experience">None</label> <br>
+			Average GPA: 
+			<label id="GPA">9.67</label><br>
+			Email: 
+			<label id="Email">yatharth2000.vyas@gmail.com</label><br>
+			 GitHub: 
+			<label id="GitHub"><a href="https://github.com/YatharthVyas" title="Click on the link to visit my GitHub Page">https://github.com/YatharthVyas</a></label>
+			<br>
+			<button class="btn-default" onclick="edit()" title="This button will work after we implement javascript">Edit Info</button>
 		</div>
 	</div>
 </div>
+<br>
+<hr color="black" width="60%">
 <br>
 <footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>
 </body>
