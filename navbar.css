@@ -47,7 +47,7 @@ li.dropdown
   display: block;
   color: black;
   padding: 18px 25px;
-  min-width: 133px;
+  min-width: 132px;
 }
 .dropdown:hover .dropdown-content 
 {
