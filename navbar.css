@@ -31,17 +31,20 @@
 {
   background-color: #111;
 }
+/*Dropdown elements will be in same line*/
 li.dropdown 
 {
   display: inline-block;
 }
+/*Styling the content in dropdown menu*/
 .dropdown-content
 {
   display: none;
   position: absolute;
   z-index: 1;
   padding: 0;
-} 
+}
+/*Styling the links which appear on dropdown*/ 
 .dropdown-content a
 {
   display: block;
@@ -49,32 +52,38 @@ li.dropdown
   padding: 18px 25px;
   min-width: 132px;
 }
+/*Adding Hover effect to dropdown menu*/
 .dropdown:hover .dropdown-content 
 {
   display: block;
   background-color: #333;
 }
+/*Adding hover effect to drop button*/
 .dropdown:hover .dropbtn
 {
   background-color: #111;
 }
+/*Styling the footer*/
 footer
 {
   text-align: center;
   background-color: #333;
   color: white;
 }
+/*Adding a margin top for navbar and background color lightest gray*/
 body
 {
   margin: 10px 0 0 0;
   background-color: #e6e6e6;
 }
+/*Styling the horizontal page breaks*/
 hr
 {
   height: 5px;
   color: black !important; 
   background-color: black !important;
 }
+/*Changing size of menu bar glyphicon*/
 .glyphicon-chevron-down
 {
   font-size: x-small;

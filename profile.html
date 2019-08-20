@@ -4,28 +4,31 @@
 	<title>Your Profile</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> <!-- Linking boostrap -->
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- Linking bootstrap java query -->
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> <!-- Linking boostrap java script -->
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="navbar.css">
+	<link rel="stylesheet" type="text/css" href="navbar.css"> <!-- Linking external css for navbar -->
 	<style>
+		/*Styling the heading and adding transition effect*/
 		div.heading
 		{
 			color: white;
 			padding: 15px;
 			width: 500px;
-			transition: width 2s;
+			transition: width 2s;	/*Width transition effect over 2 seconds*/
 			background: red;
-			background-image: linear-gradient(to right,red,blue);
+			background-image: linear-gradient(to right,red,blue); 	/*background gradient effect*/
 			text-shadow: 2px 2px 4px black;
 			border-radius: 0px 30px 0px 0px;
 		}
+		/*Styling the image*/
 		img.a
 		{
-			border-radius: 50%;
+			border-radius: 50%;  /*The image will appear as a circle*/
 			border: 1px solid black;
 		}
+		/*Styling the text fields which is not label (i have saved input data in label)*/
 		#info:not(label)
 		{
 			background: #3a1c71;
@@ -33,7 +36,7 @@
 			height: 425px;
 			width: 555px;
 			color: white;
-			border-radius: 5%;
+			border-radius: 5%; 		/*Rounded corners*/
 			padding: 20px;
 			text-shadow: 0px 0px 2px black;
 			font-size: large;
@@ -41,21 +44,25 @@
 			text-decoration-color: darkgrey;
 			font-family:  Courier;	
 		}
+		/*Styling the button for Edit Profile*/
 		#info button
 		{
 			font-family: Times;	
 		}
+		/*Media Query for responsiveness*/
 		@media screen and (max-width: 768px)
 		{
+			/*The heading will appear as a box on mobile devices*/
 			div.heading{
 				width: 100%;
 				border-radius: 0px;
 			}
+			/*This will make the profile info appear as a box on mobile devices*/
 			#info
 			{
-				border-radius: 0;
 				max-width: 100%;	
 			}
+			/*The hr will cover full width for Mobile devices*/
 			hr
 			{
 				min-width: 100%;
@@ -63,38 +70,34 @@
 		}
 		@media screen and (min-width: 768px)
 		{
+			/*On Desktop Screen,the heading will show a transition effect over its width*/
 			div.heading:hover
 			{
 				width: 70%;
 			}
+			/*A shadow effect will be shows */
 			#info:hover , img.a:hover
 			{
 				box-shadow: 10px 10px 8px 10px #888888;
 			}
+			/*On Desktop the image column will appear to the right of info*/
 			#profile-image
 			{
 				float: right;
 			}
 		}
+		/*Adding a font to our heading*/
 		h2
 		{
   			font-family: "Courier New", Courier, monospace;
   			text-shadow: 1px 0px 0px white;
 		}
-		button
-		{
-			border-radius: 7px;
-			padding: 7px;
-		}
-		a
-		{
-			text-decoration: none;
-			color: white;
-		}
+		/*A blue focus will appear over the input field when selected*/
 		input:focus
 		{
 			background-color: #e6f2ff;
 		}
+		/*Styling form elements*/
 		input[type=Name],input[type=Number],input[type=text],input[type=email]
 		{
 			border: 1px solid #ccc;
@@ -103,40 +106,88 @@
 			border-radius: 7px;
 			padding: 7px;
 		}
+		/*This will style our table by adding a margin to left*/
+		#inputinfo
+		{
+			margin-left: 20px;
+		}
+		/*Adding spaces to the left and bottom of input fields*/
+		td
+		{
+			padding-left: 10px;
+			padding-bottom: 5px;
+		}
+		/*Hides the success alert div*/
+		#successform
+		{
+			display: none;
+		}
+		/*Hides the warning aleart div*/
+		#failform
+		{
+			display: none;
+		}
 	</style>
 	<script>
+		//This function will be called when the submit button inside the modal is pressed. It will store all input values in their respective HTML labels
 		function edit()
 		{
-			document.getElementById("Name").innerHTML=document.getElementById("EditName").value;
+
+			document.getElementById("Name").innerHTML=document.getElementById("EditName").value; //Here we are storing Name to its label
 			document.getElementById("Age").innerHTML=document.getElementById("EditAge").value;
 			document.getElementById("College").innerHTML=document.getElementById("EditEducation").value;
 			document.getElementById("Experience").innerHTML=document.getElementById("EditExperience").value;
 			document.getElementById("GPA").innerHTML=document.getElementById("EditGPA").value;
 			document.getElementById("Email").innerHTML=document.getElementById("EditEmail").value;
 			document.getElementById("GitHub").innerHTML=document.getElementById("EditGit").value;
-			document.getElementById("myPanel").visibility=visible;
+			document.getElementById("successform").style.display = "block";  //To Display the Success Alert
+		}
+		//Function to change image by changing the source of img tag.
+		function changeimg()
+		{
+			if (document.getElementById("imglink").value=="")  		//If user has not entered any image url
+			{ 
+				document.getElementById("failform").style.display = "block";		//Displays Warning Alert
+				document.getElementById("successform").style.display = "none";		//Hides Success Alert if visible
+			}
+			else 													//To change the image
+			{
+				document.getElementById("profimg").src=document.getElementById("imglink").value;
+				document.getElementById("successform").style.display = "block";		//Display Success Alert
+				document.getElementById("failform").style.display = "none";			//Hides Warning Alrt if visible
+			}
 		}
 	</script>
 </head>
 <body>
+<!-- ============== -->
+<!-- Navigation Bar -->
+<!-- ============== -->
 <div class="nav">
-<ul type="none" >
-	<li><a href="CompManufacturer.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-  	<li><a href="pclist.html">Products</a></li>
-  	<li><a href="Offers.html">Offers</a></li>
-  	<li><a href="purchase.html">Purchase</a></li>
-  	<li><a href="customer.html">Complaints</a></li>
-  	<li><a href="Apply.html">Apply</a></li>
- 	<li><a href="terms.html">Terms</a></li>
- 	<li class="dropdown"><a href="" class="dropbtn">User Menu <span class="glyphicon glyphicon-chevron-down"></span></a>
- 		<div class="dropdown-content">
- 			<a href="login.html"><span class="glyphicon glyphicon-lock"></span> Login</a><br>
- 			<a href="profile.html" class="active"><span class="glyphicon glyphicon-user"></span> Profile</a>
- 		</div>
- 	</li>
- </ul>
-<br><br><br>
+	<ul type="none">
+		<li><a href="CompManufacturer.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+		<!-- Here we used boostrap glyphicon for home -->
+  		<li><a href="pclist.html">Products</a></li>
+  		<li><a href="Offers.html">Offers</a></li>
+  		<li><a href="purchase.html">Purchase</a></li>
+  		<li><a href="customer.html">Complaints</a></li>
+  		<li><a href="Apply.html">Apply</a></li>
+ 		<li><a href="terms.html">Terms</a></li>
+ 		<li class="dropdown"><a href="" class="dropbtn">User Menu <span class="glyphicon glyphicon-chevron-down"></span></a> 
+ 			<!-- Here we used boostrap glyphicon for dropdown -->
+    		<div class="dropdown-content">
+      			<a href="login.html"><span class="glyphicon glyphicon-lock"></span> Login</a><br>
+      			<!-- Here we used boostrap glyphicon for login -->
+      			<a href="profile.html" class="active"><span class="glyphicon glyphicon-user"></span> Profile</a>
+      			<!-- Here we used boostrap glyphicon for profile-->
+   			</div>
+  		</li>
+	</ul>
 </div>
+<!-- ===================== -->
+<!-- End of Navigation Bar -->
+<!-- ===================== -->
+<br><br><br>
 <hr color=black>
 <div class=heading>
 	<h2 align="center">Welcome to Your Profile</h2>
@@ -144,16 +195,24 @@
 <hr color=black width=70% align="left">
 <br>
 <div class="container">	<!-- This will leave margins appropriately -->
+	<div class="alert alert-success" id="successform">
+    <strong>Success!</strong> Your changes have been made.
+  </div>
+  <div class="alert alert-warning" id="failform">
+    <strong>Alert!</strong> You have not entered any image url.
+  </div>
 	<div class="row">
 		<div class="col-md-6 center-block" align="center" id="profile-image">
-			<img class="a" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" height="250px" title="Click the button below to Change this image">
+			<img class="a" id="profimg" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="Enter a valid image url" height="250px" title="Click the button below to Change this image">
 			<br>
 			<br>
-			<button class="btn btn-primary btn-lg" title="This button will work after we implement javascript"><span class="glyphicon glyphicon-camera"></span> Change Image</button>
+			<button class="btn btn-primary btn-lg" onClick="changeimg()"><span class="glyphicon glyphicon-camera"></span> Change Image</button>
+			<br>
+			<input type="text" id="imglink" placeholder="Enter image url"><br><br>
 		</div>
 		<div class="col-md-6" id="info">
 			<p align="right">
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#editProfile"><span class="glyphicon glyphicon-pencil"></span> Edit Info</button>
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#editProfile"><span class="glyphicon glyphicon-pencil"></span> Edit Info</button> <!-- This button will toggle the modal -->
 			</p>
 			Name: 
 			<label id="Name">Yatharth Vyas</label>  <br>
@@ -172,6 +231,9 @@
 		</div>
 	</div>
 </div>
+<!-- =================================== -->
+<!-- Modal for taking input begins here -->
+<!-- =================================== -->
 <div id="editProfile" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -180,7 +242,8 @@
 				<h1> Enter the new data here </h2>
 			</div>
 			<div class="modal-body">
-				<table>
+				<!-- Using a table for orientation of the form -->
+				<table id="inputinfo"> 
 					<form>
 					<tr>
 						<th>
@@ -243,11 +306,15 @@
 				</div>
 			<div class="modal-footer">
 				<button type="Submit" class="btn btn-success" onClick="edit()" data-dismiss="modal">Submit</button>
+				<!-- This button will call function edit () in JavaScript -->
           		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         	</div>
       	</div>
     </div>
 </div>
+<!-- =============== -->
+<!-- Modal Ends here -->
+<!-- =============== -->
 <br>
 <hr color="black" width="60%">
 <br>
