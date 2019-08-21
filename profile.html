@@ -127,37 +127,12 @@
 		{
 			display: none;
 		}
+		/*To hide the change image division by default*/
+		#imgDiv
+		{
+			display: none;
+		}
 	</style>
-	<script>
-		//This function will be called when the submit button inside the modal is pressed. It will store all input values in their respective HTML labels
-		function edit()
-		{
-
-			document.getElementById("Name").innerHTML=document.getElementById("EditName").value; //Here we are storing Name to its label
-			document.getElementById("Age").innerHTML=document.getElementById("EditAge").value;
-			document.getElementById("College").innerHTML=document.getElementById("EditEducation").value;
-			document.getElementById("Experience").innerHTML=document.getElementById("EditExperience").value;
-			document.getElementById("GPA").innerHTML=document.getElementById("EditGPA").value;
-			document.getElementById("Email").innerHTML=document.getElementById("EditEmail").value;
-			document.getElementById("GitHub").innerHTML=document.getElementById("EditGit").value;
-			document.getElementById("successform").style.display = "block";  //To Display the Success Alert
-		}
-		//Function to change image by changing the source of img tag.
-		function changeimg()
-		{
-			if (document.getElementById("imglink").value=="")  		//If user has not entered any image url
-			{ 
-				document.getElementById("failform").style.display = "block";		//Displays Warning Alert
-				document.getElementById("successform").style.display = "none";		//Hides Success Alert if visible
-			}
-			else 													//To change the image
-			{
-				document.getElementById("profimg").src=document.getElementById("imglink").value;
-				document.getElementById("successform").style.display = "block";		//Display Success Alert
-				document.getElementById("failform").style.display = "none";			//Hides Warning Alrt if visible
-			}
-		}
-	</script>
 </head>
 <body>
 <!-- ============== -->
@@ -202,14 +177,24 @@
     <strong>Alert!</strong> You have not entered any image url.
   </div>
 	<div class="row">
+		<!-- ========================= -->
+		<!-- This is The Image Column -->
+		<!-- ========================== -->
 		<div class="col-md-6 center-block" align="center" id="profile-image">
-			<img class="a" id="profimg" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="Enter a valid image url" height="250px" title="Click the button below to Change this image">
+			<img class="a" id="profimg" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="Enter a valid image url" height="250px" width="250px" title="Click the button below to Change this image">
 			<br>
 			<br>
-			<button class="btn btn-primary btn-lg" onClick="changeimg()"><span class="glyphicon glyphicon-camera"></span> Change Image</button>
-			<br>
-			<input type="text" id="imglink" placeholder="Enter image url"><br><br>
+			<button type="button" class="btn btn-info btn-lg" id="toggleimg" onClick="showdiv()"><span class="glyphicon glyphicon-pencil"></span> Edit Image</button>
+			<div id="imgDiv">
+				<button class="btn btn-primary btn-lg" onClick="changeimg()"><span class="glyphicon glyphicon-camera"></span> Change Image</button>
+				<br>
+				<input type="text" id="imglink" placeholder="Enter image url"><br><br>
+			</div>
 		</div>
+		<!-- End of Image Column -->
+		<!-- =============================== -->
+		<!-- This is the Profile Info Column -->
+		<!-- =============================== -->
 		<div class="col-md-6" id="info">
 			<p align="right">
 				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#editProfile"><span class="glyphicon glyphicon-pencil"></span> Edit Info</button> <!-- This button will toggle the modal -->
@@ -231,6 +216,7 @@
 		</div>
 	</div>
 </div>
+<!-- End Of Profile Info -->
 <!-- =================================== -->
 <!-- Modal for taking input begins here -->
 <!-- =================================== -->
@@ -319,5 +305,47 @@
 <hr color="black" width="60%">
 <br>
 <footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>
+<!--================================================ Java Script========================================================== -->
+<script>
+		//This function will be called when the submit button inside the modal is pressed. It will store all input values in their respective HTML labels
+		function edit()
+		{
+
+			document.getElementById("Name").innerHTML=document.getElementById("EditName").value; 	//Here we are storing Name to its label
+			document.getElementById("Age").innerHTML=document.getElementById("EditAge").value;
+			document.getElementById("College").innerHTML=document.getElementById("EditEducation").value;
+			document.getElementById("Experience").innerHTML=document.getElementById("EditExperience").value;
+			document.getElementById("GPA").innerHTML=document.getElementById("EditGPA").value;
+			document.getElementById("Email").innerHTML=document.getElementById("EditEmail").value;
+			document.getElementById("GitHub").innerHTML=document.getElementById("EditGit").value;
+			document.getElementById("successform").style.display = "block";  						//To Display the Success Alert
+			$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);					//Blinking Fade in-out effect
+		}	
+		function showdiv()
+		{
+			// document.getElementById("imgDiv").style.display = "block"; 
+			document.getElementById("toggleimg").style.display = "none";
+			$('#imgDiv').slideDown(2000);
+		}
+		//Function to change image by changing the source of img tag.
+		function changeimg()
+		{
+			if (document.getElementById("imglink").value=="")  					//If user has not entered any image url
+			{ 
+				document.getElementById("failform").style.display = "block";		//Displays Warning Alert
+				document.getElementById("successform").style.display = "none";		//Hides Success Alert if visible
+				$('#failform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);	//Blinking Fade in-out effect
+			}
+			else																//To change the image
+			{
+				document.getElementById("profimg").src=document.getElementById("imglink").value;
+				document.getElementById("successform").style.display = "block";			//Display Success Alert
+				document.getElementById("failform").style.display = "none";				//Hides Warning Alrt if visible
+				$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);	//Blinking Fade in-out effect
+				document.getElementById("imgDiv").style.display = "none"; ;
+				document.getElementById("toggleimg").style.display = "block";
+			}
+		}
+	</script>
 </body>
 </html>
