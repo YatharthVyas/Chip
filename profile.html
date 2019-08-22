@@ -122,8 +122,13 @@
 		{
 			display: none;
 		}
-		/*Hides the warning aleart div*/
+		/*Hides the warning alert div for image*/
 		#failform
+		{
+			display: none;
+		}
+		/*Hides the warning alert div for info*/
+		#failinfo
 		{
 			display: none;
 		}
@@ -175,6 +180,9 @@
   </div>
   <div class="alert alert-warning" id="failform">
     <strong>Alert!</strong> You have not entered any image url.
+  </div>
+  <div class="alert alert-warning" id="failinfo">
+    <strong>Alert!</strong> You have not entered the form fields correctly.
   </div>
 	<div class="row">
 		<!-- ========================= -->
@@ -236,7 +244,7 @@
 							Name:- 
 						</th>
 						<td>
-							<input type="Name" id="EditName" placeholder="Enter Name">
+							<input type="Name" id="EditName" name="Name" placeholder="Enter Name">
 						</td>
 					</tr>
 					<tr>
@@ -244,7 +252,7 @@
 							Age:- 
 						</th>
 						<td>
-							<input type="Number" id="EditAge" maxlength="3" min="1" placeholder="Enter Age">
+							<input type="Number" id="EditAge" name="Age" placeholder="Enter Age">
 						</td>
 					</tr>
 					<tr>
@@ -252,7 +260,7 @@
 							Education:- 
 						</th>
 						<td>
-							<input type="text" id="EditEducation" placeholder="Enter College Name">
+							<input type="text" id="EditEducation" name="College Name" placeholder="Enter College Name">
 						</td>
 					</tr>
 					<tr>
@@ -260,7 +268,7 @@
 							Experience:- 
 						</th>
 						<td>
-							<input type="text" id="EditExperience" placeholder="Enter Education">
+							<input type="text" id="EditExperience" name="Experience" placeholder="Enter Education">
 						</td>
 					</tr>
 					<tr>
@@ -268,7 +276,7 @@
 							Average GPA:- 
 						</th>
 						<td>
-							<input type="Number" step="0.01" id="EditGPA" placeholder="Enter GPA">
+							<input type="Number" step="0.01" id="EditGPA" name="GPA" placeholder="Enter GPA">
 						</td>
 					</tr>
 					<tr>
@@ -276,7 +284,7 @@
 							Email:- 
 						</th>
 						<td>
-							<input type="Email" id="EditEmail" placeholder="xyz@gmail.com">
+							<input type="Email" id="EditEmail" name="Email" placeholder="Enter Email">
 						</td>
 					</tr>
 					<tr>
@@ -284,7 +292,7 @@
 							GitHub:- 
 						</th>
 						<td>
-							<input type="text" id="EditGit" placeholder="https://github.com/">
+							<input type="text" id="EditGit" name="GitHub" placeholder="Enter GitHub">
 						</td>
 					</tr>
 					</form>
@@ -310,16 +318,31 @@
 		//This function will be called when the submit button inside the modal is pressed. It will store all input values in their respective HTML labels
 		function edit()
 		{
-
-			document.getElementById("Name").innerHTML=document.getElementById("EditName").value; 	//Here we are storing Name to its label
-			document.getElementById("Age").innerHTML=document.getElementById("EditAge").value;
-			document.getElementById("College").innerHTML=document.getElementById("EditEducation").value;
-			document.getElementById("Experience").innerHTML=document.getElementById("EditExperience").value;
-			document.getElementById("GPA").innerHTML=document.getElementById("EditGPA").value;
-			document.getElementById("Email").innerHTML=document.getElementById("EditEmail").value;
-			document.getElementById("GitHub").innerHTML=document.getElementById("EditGit").value;
-			document.getElementById("successform").style.display = "block";  						//To Display the Success Alert
-			$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);					//Blinking Fade in-out effect
+			var ctr = 0;														//counter to check if any input is incorrect
+			var warn = "You have not entered the following fields: ";			//String to display error alert
+			$('input').each(function(){											//This will call the function for all input fields
+				if (this.value=="" && this.placeholder!="Enter image url")		//If the input is not for image, it will check for input
+				{
+					warn = warn + "\n" + this.name;								//Warning Message
+					ctr++;														//Counter is incremented
+				}
+			})
+			if (ctr==0)															//If all inputs are present
+			{
+				document.getElementById("Name").innerHTML=document.getElementById("EditName").value; 	//Storing Name to its label
+				document.getElementById("Age").innerHTML=document.getElementById("EditAge").value;
+				document.getElementById("College").innerHTML=document.getElementById("EditEducation").value;
+				document.getElementById("Experience").innerHTML=document.getElementById("EditExperience").value;
+				document.getElementById("GPA").innerHTML=document.getElementById("EditGPA").value;
+				document.getElementById("Email").innerHTML=document.getElementById("EditEmail").value;
+				document.getElementById("GitHub").innerHTML=document.getElementById("EditGit").value;
+				$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);					//Blinking Fade in-out effect
+			}
+			else
+			{
+				alert(warn);
+				$('#failinfo').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);
+			}
 		}	
 		function showdiv()
 		{
@@ -340,7 +363,7 @@
 			{
 				document.getElementById("profimg").src=document.getElementById("imglink").value;
 				document.getElementById("successform").style.display = "block";			//Display Success Alert
-				document.getElementById("failform").style.display = "none";				//Hides Warning Alrt if visible
+				document.getElementById("failform").style.display = "none";				//Hides Warning Alert if visible
 				$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);	//Blinking Fade in-out effect
 				document.getElementById("imgDiv").style.display = "none"; ;
 				document.getElementById("toggleimg").style.display = "block";
