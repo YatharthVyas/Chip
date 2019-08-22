@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!-- Profile Page -->
 <head>
 	<title>Your Profile</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,8 @@
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- Linking bootstrap java query -->
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> <!-- Linking boostrap java script -->
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="navbar.css"> <!-- Linking external css for navbar -->
+	<link rel="icon" href="icon/icon.png">						<!-- This will add our icon to the title bar of the page -->
+	<link rel="stylesheet" type="text/css" href="navbar.css"> 	<!-- Linking external css for navbar -->
 	<style>
 		/*Styling the heading and adding transition effect*/
 		div.heading
@@ -137,6 +139,18 @@
 		{
 			display: none;
 		}
+		/*To remove the default a href color and underline*/
+		a
+		{
+			text-decoration: none;
+			color: white;
+		}
+		/*To remove the default hover effect from anchor links*/
+		a label:hover
+		{
+			text-decoration: underline;
+			color: white;
+		}
 	</style>
 </head>
 <body>
@@ -196,8 +210,9 @@
 			<div id="imgDiv">
 				<button class="btn btn-primary btn-lg" onClick="changeimg()"><span class="glyphicon glyphicon-camera"></span> Change Image</button>
 				<br>
-				<input type="text" id="imglink" placeholder="Enter image url"><br><br>
+				<input type="text" id="imglink" placeholder="Enter image url">
 			</div>
+			<br><br>
 		</div>
 		<!-- End of Image Column -->
 		<!-- =============================== -->
@@ -205,7 +220,7 @@
 		<!-- =============================== -->
 		<div class="col-md-6" id="info">
 			<p align="right">
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#editProfile"><span class="glyphicon glyphicon-pencil"></span> Edit Info</button> <!-- This button will toggle the modal -->
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#editProfile"><span class="glyphicon glyphicon-pencil"></span> Edit Info</button> 				<!-- This button will toggle the modal -->
 			</p>
 			Name: 
 			<label id="Name">Yatharth Vyas</label>  <br>
@@ -218,9 +233,9 @@
 			Average GPA: 
 			<label id="GPA">9.67</label><br>
 			Email: 
-			<label id="Email">yatharth2000.vyas@gmail.com</label><br>
+			<a href="mailto:yatharth2000.vyas@gmail.com" id="emailurl"><label id="Email">yatharth2000.vyas@gmail.com</label></a><br>
 			GitHub: 
-			<label id="GitHub">https://github.com/YatharthVyas</label><br>
+			<a href="https://github.com/YatharthVyas" id="GitHubUrl"><label id="GitHub">https://github.com/YatharthVyas</label></a><br>
 		</div>
 	</div>
 </div>
@@ -268,7 +283,7 @@
 							Experience:- 
 						</th>
 						<td>
-							<input type="text" id="EditExperience" name="Experience" placeholder="Enter Education">
+							<input type="text" id="EditExperience" name="Experience" placeholder="Enter Experience">
 						</td>
 					</tr>
 					<tr>
@@ -313,12 +328,15 @@
 <hr color="black" width="60%">
 <br>
 <footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>
+<!-- ===================================================================================================================== -->
 <!--================================================ Java Script========================================================== -->
+<!-- ===================================================================================================================== -->
 <script>
 		//This function will be called when the submit button inside the modal is pressed. It will store all input values in their respective HTML labels
 		function edit()
 		{
-			var ctr = 0;														//counter to check if any input is incorrect
+			var ctr = 0;
+			var ctr2 = 0;														//counter to check if any input is incorrect
 			var warn = "You have not entered the following fields: ";			//String to display error alert
 			$('input').each(function(){											//This will call the function for all input fields
 				if (this.value=="" && this.placeholder!="Enter image url")		//If the input is not for image, it will check for input
@@ -327,7 +345,16 @@
 					ctr++;														//Counter is incremented
 				}
 			})
-			if (ctr==0)															//If all inputs are present
+			var emailstr = innerHTML=document.getElementById("EditEmail").value;
+			var pos1 = -1;
+			var pos2 = -1;
+			pos1 = emailstr.search("@");
+			pos2 = emailstr.search(".com");
+			if (pos1<=1 && pos2<=pos1+2)								//This will check if email address is of the right format
+			{
+				ctr2++;
+			}
+			if (ctr==0 && ctr2==0)															//If all inputs are present
 			{
 				document.getElementById("Name").innerHTML=document.getElementById("EditName").value; 	//Storing Name to its label
 				document.getElementById("Age").innerHTML=document.getElementById("EditAge").value;
@@ -336,19 +363,30 @@
 				document.getElementById("GPA").innerHTML=document.getElementById("EditGPA").value;
 				document.getElementById("Email").innerHTML=document.getElementById("EditEmail").value;
 				document.getElementById("GitHub").innerHTML=document.getElementById("EditGit").value;
+				$('#GitHubUrl').attr("href",$('#EditGit').val());										//Sets href of GitHub to input link
+				$('#emailurl').attr("href","mailto:"+$('#EditEmail').val());
 				$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);					//Blinking Fade in-out effect
 			}
-			else
+			else if (ctr>0)
 			{
 				alert(warn);
+				$('#failinfo').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);				//Blinking Fade in-out effect
+			}
+			else 
+			{
+				alert("Email is not Valid");
 				$('#failinfo').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);
 			}
 		}	
 		function showdiv()
 		{
 			// document.getElementById("imgDiv").style.display = "block"; 
-			document.getElementById("toggleimg").style.display = "none";
-			$('#imgDiv').slideDown(2000);
+			// document.getElementById("toggleimg").style.display = "none";
+			$('#toggleimg').slideUp(500,function()								//Adding a callback to chain slideUp and slideDown
+			{																
+				$('#imgDiv').slideDown(2000);
+			});
+			// $('#imgDiv').slideDown(2000);
 		}
 		//Function to change image by changing the source of img tag.
 		function changeimg()
@@ -365,10 +403,13 @@
 				document.getElementById("successform").style.display = "block";			//Display Success Alert
 				document.getElementById("failform").style.display = "none";				//Hides Warning Alert if visible
 				$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);	//Blinking Fade in-out effect
-				document.getElementById("imgDiv").style.display = "none"; ;
-				document.getElementById("toggleimg").style.display = "block";
+					$('#imgDiv').slideUp(500,function()									//Adding a callback to chain slideUp and slideDown
+					{
+						$('#toggleimg').slideDown(2000);
+					});
 			}
 		}
 	</script>
+	<!-- End of JavaScript -->
 </body>
 </html>
