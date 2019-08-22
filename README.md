@@ -3,7 +3,9 @@
 <ul>
   <li><b>This is my First HTML-CSS Website.</b></li>
   <li><b>Topic-</b> Computer Manufacturer</li>
-  <li><b>Languages Used:</b> HTML, CSS, BootStrap</li>
+  <li><b>Languages Used:</b> HTML, CSS, JavaScript</li>
+  <li><b>Frameworks Used:</b> Bootstrap</li>
+  <li><b>Library Used:</b> jQuery</li>
   <li><b>Progess-</b> Ready but open for improvements</li>
 </ul>
 <h3>There are 9 pages in this website</h3>
