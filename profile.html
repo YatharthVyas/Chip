@@ -189,6 +189,8 @@
 <hr color=black width=70% align="left">
 <br>
 <div class="container">	<!-- This will leave margins appropriately -->
+	<!-- ==================================================================================================================== -->
+	<!--=========== These Divisions are hidden by default and will be visible if a certain condition is there ================-->
 	<div class="alert alert-success" id="successform">
     <strong>Success!</strong> Your changes have been made.
   </div>
@@ -198,6 +200,7 @@
   <div class="alert alert-warning" id="failinfo">
     <strong>Alert!</strong> You have not entered the form fields correctly.
   </div>
+ 	<!-- ==================================================================================================================== -->
 	<div class="row">
 		<!-- ========================= -->
 		<!-- This is The Image Column -->
@@ -215,6 +218,7 @@
 			<br><br>
 		</div>
 		<!-- End of Image Column -->
+		<!-- ==================================================================================================================== -->
 		<!-- =============================== -->
 		<!-- This is the Profile Info Column -->
 		<!-- =============================== -->
@@ -233,13 +237,14 @@
 			Average GPA: 
 			<label id="GPA">9.67</label><br>
 			Email: 
-			<a href="mailto:yatharth2000.vyas@gmail.com" id="emailurl"><label id="Email">yatharth2000.vyas@gmail.com</label></a><br>
+			<a href="mailto:yatharth2000.vyas@gmail.com" id="emailurl" title="Click here to send an email"><label id="Email">yatharth2000.vyas@gmail.com</label></a><br>
 			GitHub: 
-			<a href="https://github.com/YatharthVyas" id="GitHubUrl"><label id="GitHub">https://github.com/YatharthVyas</label></a><br>
+			<a href="https://github.com/YatharthVyas" id="GitHubUrl" title="Click here to visit GitHub"><label id="GitHub">https://github.com/YatharthVyas</label></a><br>
 		</div>
 	</div>
 </div>
 <!-- End Of Profile Info -->
+<!-- ==================================================================================================================== -->
 <!-- =================================== -->
 <!-- Modal for taking input begins here -->
 <!-- =================================== -->
@@ -247,13 +252,13 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>		<!-- to close the modal -->
 				<h1> Enter the new data here </h2>
 			</div>
 			<div class="modal-body">
 				<!-- Using a table for orientation of the form -->
-				<table id="inputinfo"> 
-					<form>
+				<table id="inputinfo">   		 <!-- Table is used to align the form elements -->
+					<form autocomplete="off"> 	 <!-- Form starts here -->
 					<tr>
 						<th>
 							Name:- 
@@ -315,8 +320,9 @@
 				</div>
 			<div class="modal-footer">
 				<button type="Submit" class="btn btn-success" onClick="edit()" data-dismiss="modal">Submit</button>
-				<!-- This button will call function edit () in JavaScript -->
-          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<!-- This button will call function edit () in JavaScript and toggle modal tp hidden -->
+          		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          		<!-- This will close our modal -->
         	</div>
       	</div>
     </div>
@@ -327,7 +333,7 @@
 <br>
 <hr color="black" width="60%">
 <br>
-<footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>
+<footer>Copyright © ChipManufacturers™, 2004-2019. All rights reserved.</footer>		<!-- This is the page Footer -->
 <!-- ===================================================================================================================== -->
 <!--================================================ Java Script========================================================== -->
 <!-- ===================================================================================================================== -->
@@ -335,24 +341,24 @@
 		//This function will be called when the submit button inside the modal is pressed. It will store all input values in their respective HTML labels
 		function edit()
 		{
-			var ctr = 0;
-			var ctr2 = 0;														//counter to check if any input is incorrect
-			var warn = "You have not entered the following fields: ";			//String to display error alert
+			var ctr = 0;														//counter to check if any data field is empty
+			var ctr2 = 0;														//counter to check if email input is incorrect
+			var warn = "You have not entered the following fields: ";			//String to display error alert message
 			$('input').each(function(){											//This will call the function for all input fields
-				if (this.value=="" && this.placeholder!="Enter image url")		//If the input is not for image, it will check for input
+				if ( this.value == "" && this.placeholder != "Enter image url")		//If the input is not for image, it will check for input
 				{
 					warn = warn + "\n" + this.name;								//Warning Message
-					ctr++;														//Counter is incremented
+					ctr++;														//Error Counter is incremented
 				}
 			})
 			var emailstr = innerHTML=document.getElementById("EditEmail").value;
-			var pos1 = -1;
-			var pos2 = -1;
-			pos1 = emailstr.search("@");
-			pos2 = emailstr.search(".com");
+			var pos1 = -1;												//Position variable to store position of @
+			var pos2 = -1;												//Position variable to store position of .com
+			pos1 = emailstr.search("@");								//Using string search method to find @
+			pos2 = emailstr.search(".com");								//This function will return the position of . if .com is found in str
 			if (pos1<=1 && pos2<=pos1+2)								//This will check if email address is of the right format
 			{
-				ctr2++;
+				ctr2++;													//Incrementing counter for invalid email format
 			}
 			if (ctr==0 && ctr2==0)															//If all inputs are present
 			{
@@ -367,12 +373,12 @@
 				$('#emailurl').attr("href","mailto:"+$('#EditEmail').val());
 				$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);					//Blinking Fade in-out effect
 			}
-			else if (ctr>0)
+			else if (ctr>0)																		//For one or more blank inputs
 			{
 				alert(warn);
 				$('#failinfo').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);				//Blinking Fade in-out effect
 			}
-			else 
+			else 																				//For invalid email format
 			{
 				alert("Email is not Valid");
 				$('#failinfo').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);
@@ -380,13 +386,10 @@
 		}	
 		function showdiv()
 		{
-			// document.getElementById("imgDiv").style.display = "block"; 
-			// document.getElementById("toggleimg").style.display = "none";
 			$('#toggleimg').slideUp(500,function()								//Adding a callback to chain slideUp and slideDown
 			{																
-				$('#imgDiv').slideDown(2000);
+				$('#imgDiv').slideDown(1500);									//The div will slideDown in 1.5seconds
 			});
-			// $('#imgDiv').slideDown(2000);
 		}
 		//Function to change image by changing the source of img tag.
 		function changeimg()
@@ -405,7 +408,7 @@
 				$('#successform').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(1000);	//Blinking Fade in-out effect
 					$('#imgDiv').slideUp(500,function()									//Adding a callback to chain slideUp and slideDown
 					{
-						$('#toggleimg').slideDown(2000);
+						$('#toggleimg').slideDown(2000);								//After the first animation is over, this will occur
 					});
 			}
 		}

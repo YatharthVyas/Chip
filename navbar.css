@@ -4,7 +4,7 @@
 /* Add a black background color to the top navigation bar */
 .nav ul
 { 
-  position: absolute;
+  position: absolute;     /*To set margin-top: 0 , we need to keep the position as absolute*/
   width: 100%;
   top: 0;
   padding: 0;
