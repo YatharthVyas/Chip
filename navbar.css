@@ -59,7 +59,7 @@ li.dropdown
 .dropdown:hover .dropdown-content 
 {
   display: block;
-  background-color: #333;
+  background-color: rgb(80, 79, 79);
 }
 /*Adding hover effect to drop button*/
 .dropdown:hover .dropbtn
@@ -82,7 +82,8 @@ body
 /*Styling the horizontal page breaks*/
 hr
 {
-  height: 5px;
+  height: 2px;
+  width:70vw;
   color: black !important; 
   background-color: black !important;
 }
