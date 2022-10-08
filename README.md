@@ -19,3 +19,4 @@
   <li>Terms and Conditions- terms.html</li>
   <li>User Menu 1: Login- login.html</li>
   <li>User Menu 2: Profile- profile.html</li>
+</ol>
